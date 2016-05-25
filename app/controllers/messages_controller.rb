@@ -8,6 +8,8 @@ class MessagesController < ApplicationController
     end
     def create
         @message= Message.new(message_params)
+        @message.ip=request.remote_ip
+        
         
         if @message.save
             redirect_to '/messages'

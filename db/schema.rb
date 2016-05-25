@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(version: 20160524180104) do
 
   create_table "messages", force: :cascade do |t|
-    t.text     "person"
-    t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "person",     limit: 65535
+    t.text     "content",    limit: 65535
+    t.text     "ip",         limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

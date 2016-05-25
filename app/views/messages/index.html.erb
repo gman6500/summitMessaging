@@ -5,17 +5,18 @@
 <body>
   <div class="header">
   <div class="container">
-    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
+                <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
     <h1>Messenger</h1>
   </div>
 </div>
-<%= link_to 'New Message', "messages/new" %>
+<div class="messages"><%= link_to 'New Message', "messages/new" %></div>
 <% @messages.each do |message| %> 
 <div class="message"> 
   <p class="person"><%= message.person %></p><br>
   <div>
   <p class="content"><%= message.content %></p> 
   <p class="time"><%= message.created_at %></p> 
+  <p class="time"><%= message.ip %></p> 
   </div>
 </div> 
 <% end %>
